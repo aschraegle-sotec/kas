@@ -288,8 +288,7 @@ def get_build_environ(build_system):
         get_bb_env_file.write_text(script)
         get_bb_env_file.chmod(0o775)
 
-        env = {}
-        env['PATH'] = os.environ['PATH']
+        env = dict(os.environ)
 
         (_, output) = run_cmd([str(get_bb_env_file), get_context().build_dir],
                               cwd=init_repo.path, env=env)
