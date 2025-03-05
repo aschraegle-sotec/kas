@@ -549,6 +549,11 @@ if [ -n "${AWS_WEB_IDENTITY_TOKEN_FILE}" ] ; then
 		-e AWS_ROLE_ARN="${AWS_ROLE_ARN}"
 fi
 
+if [ -n "${GOOGLE_APPLICATION_CREDENTIALS}" ]; then
+	set -- "$@" -v "$(readlink -fv "${GOOGLE_APPLICATION_CREDENTIALS}")":/var/kas/userdata/.gcloud/application_credentials:ro \
+		-e GOOGLE_APPLICATION_CREDENTIALS="/var/kas/userdata/.gcloud/application_credentials"
+fi
+
 KAS_GIT_CREDENTIAL_HELPER_DEFAULT=""
 
 if [ -n "${KAS_GIT_CREDENTIAL_STORE}" ] ; then
