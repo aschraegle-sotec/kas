@@ -130,6 +130,9 @@ Variables Glossary
 | |aws_cred|               | files that are copied to the kas home dir.       |
 | (K,C)                    |                                                  |
 +--------------------------+--------------------------------------------------+
+| |gcloud_cred|            | Path to the gcloud sdk application credentials   |
+| (K,C)                    | file that is copied to the kas home dir.         |
++--------------------------+--------------------------------------------------+
 | |git_cred|               | Allows one to set and configure the git          |
 | (K,C)                    | credential helper in the `.gitconfig` of the kas |
 |                          | user.                                            |
@@ -193,6 +196,7 @@ Variables Glossary
                               ``CI_SERVER_PROTOCOL``
                               ``CI_SERVER_SHELL_SSH_HOST``
                               ``CI_SERVER_SHELL_SSH_PORT``
+.. |gcloud_cred| replace:: ``GOOGLE_APPLICATION_CREDENTIALS``
 
 .. only:: html
 
